@@ -4,8 +4,15 @@ namespace SinglyLinkedList
 {
     public class LinkedList
     {
+        public Node _sentinel { get; set; }
 
         public Node _head { get; set; }
+
+        public LinkedList(int sentinelValue=default)
+        {
+            _sentinel = new Node(sentinelValue);
+            _sentinel.next = _head;
+        }
 
     }
 
@@ -41,8 +48,7 @@ namespace SinglyLinkedList
 
         static public Node FindNodeBefore(this LinkedList linked, int valueTar)
         {
-            Node sentinel = new Node(0);
-            sentinel.next = linked._head;
+            Node sentinel = linked._sentinel;
             //while (sentinel.next != null)
             do
             {
