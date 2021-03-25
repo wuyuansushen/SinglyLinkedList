@@ -24,6 +24,38 @@ namespace SinglyLinkedList
 
     public static class LinkedListExtensions
     {
+        static public Node FindNode(this LinkedList linked, int valueTar)
+        {
+            Node current = linked._head;
+            while(current!=null)
+            {
+                if (current.N == valueTar)
+                    return current;
+                else
+                {
+                    current = current.next;
+                }
+            }
+            return current;
+        }
+
+        static public Node FindNodeBefore(this LinkedList linked, int valueTar)
+        {
+            Node sentinel = new Node(0);
+            sentinel.next = linked._head;
+            //while (sentinel.next != null)
+            do
+            {
+                if (sentinel.next.N == valueTar)
+                    return sentinel;
+                else
+                {
+                    sentinel = sentinel.next;
+                }
+            } while (sentinel.next != null);
+            return null;
+        
+        }
         static public void AddNode(this LinkedList linked, int inN)
         {
             Node tmp = new Node(inN);
