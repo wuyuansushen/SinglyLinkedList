@@ -46,6 +46,12 @@ namespace SinglyLinkedList
             return current;
         }
 
+        static public void InsertTopNode(this LinkedList linked, Node insertNode)
+        {
+            insertNode.next = linked._sentinel.next;
+            linked._sentinel.next = insertNode;
+        }
+
         static public Node FindNodeBefore(this LinkedList linked, int valueTar)
         {
             Node sentinel = linked._sentinel;
