@@ -31,7 +31,7 @@ namespace SinglyLinkedList
 
         static public Node FindNodeBefore(this LinkedList linked, int valueTar)
         {
-            Node sentinel = linked._sentinel;
+            Node sentinel =linked._sentinel;
             //while (sentinel.next != null)
             do
             {
@@ -45,6 +45,26 @@ namespace SinglyLinkedList
             return null;
         
         }
+
+        static public void DeleteNode(this LinkedList linked,Node deleteNode)
+        {
+            Node currentNode = linked._sentinel;
+            while(currentNode.next!=null)
+            {
+                if(currentNode.next==deleteNode)
+                {
+                    Node tmp = currentNode.next;
+                    currentNode.next = tmp.next;
+                    tmp.next = null;
+                    return;
+                }
+                else {
+                    currentNode= currentNode.next;
+                }
+            }
+            throw new Exception("LinkedList isn't contain this node.");
+        }
+
         static public void AddNode(this LinkedList linked, int inN)
         {
             Node tmp = new Node(inN);

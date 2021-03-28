@@ -14,8 +14,7 @@ namespace SinglyLinkedList
                 tmpList.AddNode(i);
             }
             Node findTo=tmpList.FindNode(5);
-            Node insertNode = new Node(100);
-            tmpList.InsertNode(insertNode,findTo);
+            tmpList.DeleteNode(findTo);
             tmpList.DisplayLinkedList();
         }
     }
