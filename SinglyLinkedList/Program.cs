@@ -13,8 +13,6 @@ namespace SinglyLinkedList
             {
                 tmpList.AddNode(i);
             }
-            Node findTo=tmpList.FindNode(5);
-            tmpList.DeleteNode(findTo);
             tmpList.DisplayLinkedList();
         }
     }

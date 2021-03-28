@@ -46,6 +46,17 @@ namespace SinglyLinkedList
         
         }
 
+        static public void DeleteLinkedList(this LinkedList linked)
+        {
+            Node currentNode = linked._sentinel;
+            while(currentNode.next!=null)
+            {
+                Node tmp = currentNode.next;
+                currentNode.next = null;
+                currentNode = tmp;
+            }
+        }
+
         static public void DeleteNode(this LinkedList linked,Node deleteNode)
         {
             Node currentNode = linked._sentinel;
